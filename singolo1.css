@@ -4,8 +4,9 @@
   margin: 0px;
 }
 
-.header .wrapper,
-.header__bottom {
+.header,
+.slider,
+.our-services {
   width: 1020px;
   margin: 0 auto;
 }
@@ -18,7 +19,25 @@
   height: 89px;
 }
 
-/*-----------Блочная модель---------------*/
+.slider .wrapper{
+  height: 600px;
+}
+
+.slider__bottom {
+  height: 15px;
+}
+
+.our-services .wrapper {
+  height: 495px;
+}
+
+.our-services__bottom {
+  height: 6px;
+}
+
+/*-----------------------------Блочная модель---------------*/
+
+/*--------------header--------------------*/
 
 
 h1 {
@@ -42,7 +61,13 @@ h1 {
   margin-left: 30px;
 }
 
-/*-----------Типографика------------------*/
+/*----------------slider------------------*/
+
+
+
+
+
+/*--------------------------Типографика------------------*/
 
 h1 {
   font-size: 25px;
@@ -67,7 +92,7 @@ h1 {
 
 /*-----------Оформление-------------------*/
 
-.header .wrapper {
+.header .wrapper{
   background-color: #2d303a;
 }
 
@@ -75,6 +100,20 @@ h1 {
   background-color: #323746;
 }
 
+.slider .wrapper{
+  background-color: #f06c64;
+}
 
+.slider__bottom {
+  background-color: #ea676b;
+}
+
+.our-services .wrapper {
+  background-color: #f2f2f2;
+}
+
+.our-services__bottom {
+  background-color: #fff;
+}
 
 
