@@ -60,6 +60,32 @@
   padding-left: 5px;
 }
 
+/*--------------slider--------------------------*/
+
+.slider__button-left,
+.slider__vertical-image,
+.slider__horizontal-image,
+.slider__button-right {
+  display: block;
+  float: left;
+  margin-top: 281px;
+  margin-left: 42px;
+}
+
+.slider__vertical-image {
+  margin-top: 53px;
+  margin-left: 52px;
+}
+
+.slider__horizontal-image {
+  margin-top: 173px;
+  margin-left: 70px;
+}
+
+.slider__button-right {
+  margin-left: 56px;
+}
+
 /*----------------slider------------------*/
 
 /*--------------------------Типографика------------------*/
