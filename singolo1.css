@@ -20,19 +20,19 @@
 }
 
 .slider__main {
-  height: 595px;
+  height: 594px;
 }
 
 .slider__bottom {
-  height: 5px;
+  height: 6px;
 }
 
-.our-services__main {
-  height: 600px;
+.our-services__wrapper {
+  height: 494px;
 }
 
 .our-services__bottom {
-  height: 15px;
+  height: 6px;
 }
 
 /*-----------------------------Блочная модель---------------*/
@@ -86,14 +86,86 @@
   margin-left: 56px;
 }
 
-/*----------------slider------------------*/
+/*----------------our services------------------*/
+
+.our-services__main {
+  padding: 59px 40px 0 40px;
+}
+
+.our-services__main-container {
+  margin-top: 43px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-end;
+}
+
+.our-services__custom-design,
+.our-services__inovative-ideas,
+.our-services__love-is-the-answer,
+.our-services__responsive-layout,
+.our-services__24-7-support,
+.our-services__feel-like-a-star {
+  width: 33.3%;
+}
+
+.ico-custom-design,
+.ico-inovative-ideas,
+.ico-love-is-the-answer,
+.ico-responsive-layout,
+.ico-24-7-support,
+.ico-feel-like-a-star {
+  float: left;
+  margin-top: 3px;
+}
+
+.ico-responsive-layout,
+.ico-24-7-support,
+.ico-feel-like-a-star {
+  margin-top: 31px;
+}
+
+.ico-inovative-ideas,
+.ico-24-7-support {
+  padding-left: 6px;
+}
+
+.ico-love-is-the-answer,
+.ico-feel-like-a-star {
+  padding-left: 13px;
+}
+
+.our-services__custom-design-description {
+  margin-left: 80px;
+}
+
+.our-services__inovative-ideas-description {
+  margin-left: 86px;
+}
+
+.our-services__love-is-the-answer-description {
+  margin-left: 95px;
+}
+
+.our-services__responsive-layout-description {
+  margin: 28px 0 0 80px;
+}
+
+.our-services__24-7-support-description {
+  margin: 28px 0 0 86px;
+}
+
+.our-services__feel-like-a-star-description {
+  margin: 28px 0 0 95px;
+}
 
 /*--------------------------Типографика------------------*/
+
 * {
   font-family: "Lato", sans-serif;
 }
 
-h1 {
+.header__main h1 {
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -0.6px;
@@ -119,6 +191,73 @@ h1 {
   letter-spacing: -0.55px;
 }
 
+.our-services__main h2 {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #666d89;
+}
+
+.our-services__main-description {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.15px;
+  line-height: 30px;
+  text-align: left;
+  color: #767e9e;
+}
+
+.our-services__custom-design-description p,
+.our-services__inovative-ideas-description p,
+.our-services__love-is-the-answer-description p,
+.our-services__responsive-layout-description p,
+.our-services__24-7-support-description p,
+.our-services__feel-like-a-star-description p {
+  font-size: 11px;
+  font-weight: 700px;
+  line-height: 22px;
+  letter-spacing: 0.4px;
+  color: #767e9e;
+  text-align: justify;
+}
+
+.our-services__custom-design-description h3,
+.our-services__inovative-ideas-description h3,
+.our-services__love-is-the-answer-description h3,
+.our-services__responsive-layout-description h3,
+.our-services__24-7-support-description h3,
+.our-services__feel-like-a-star-description h3 {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.1px;
+  color: #666d89;
+}
+
+.our-services__custom-design-description p {
+  margin: 8px 13px 0 0;
+}
+
+.our-services__inovative-ideas-description p {
+  margin: 8px 7px 0 0;
+}
+
+.our-services__love-is-the-answer-description p {
+  margin: 8px 0 0 -1px;
+}
+
+.our-services__responsive-layout-description p {
+  margin: 8px 13px 0 0;
+}
+
+.our-services__24-7-support-description p {
+  margin: 8px 7px 0 0;
+}
+
+.our-services__feel-like-a-star-description p {
+  margin: 8px 0 0 -1px;
+}
+
 /*-----------Оформление-------------------*/
 
 .header__main {
@@ -127,26 +266,6 @@ h1 {
 
 .header__bottom {
   background-color: #323746;
-}
-
-.slider__main {
-  background-color: #f06c64;
-}
-
-.slider__bottom {
-  background-color: #ea676b;
-}
-
-.our-services__main {
-  background-color: #f2f2f2;
-}
-
-.our-services__bottom {
-  background-color: #fff;
-}
-
-.navigation li:first-child {
-  list-style-type: none;
 }
 
 .navigation li {
@@ -159,4 +278,24 @@ h1 {
 
 .navigation .navigation_selected {
   color: #f06c64;
+}
+
+.slider__main {
+  background-color: #f06c64;
+}
+
+.slider__bottom {
+  background-color: #ea676b;
+}
+
+.navigation li:first-child {
+  list-style-type: none;
+}
+
+.our-services__wrapper {
+  background-color: #f2f2f2;
+}
+
+.our-services__bottom {
+  background-color: #fff;
 }
