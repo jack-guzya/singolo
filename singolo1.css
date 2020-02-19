@@ -15,11 +15,11 @@
   height: 6px;
 }
 
-.header .wrapper {
+.header__main {
   height: 89px;
 }
 
-.slider .wrapper {
+.slider__main {
   height: 595px;
 }
 
@@ -27,7 +27,7 @@
   height: 5px;
 }
 
-.our-services .wrapper {
+.our-services__main {
   height: 600px;
 }
 
@@ -121,7 +121,7 @@ h1 {
 
 /*-----------Оформление-------------------*/
 
-.header .wrapper {
+.header__main {
   background-color: #2d303a;
 }
 
@@ -129,7 +129,7 @@ h1 {
   background-color: #323746;
 }
 
-.slider .wrapper {
+.slider__main {
   background-color: #f06c64;
 }
 
@@ -137,7 +137,7 @@ h1 {
   background-color: #ea676b;
 }
 
-.our-services .wrapper {
+.our-services__main {
   background-color: #f2f2f2;
 }
 
