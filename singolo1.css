@@ -226,10 +226,10 @@
 .our-services__responsive-layout-description p,
 .our-services__24-7-support-description p,
 .our-services__feel-like-a-star-description p {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 22px;
-  letter-spacing: 0.4px;
+  letter-spacing: 0px;
   color: #767e9e;
   text-align: justify;
 }
