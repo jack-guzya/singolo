@@ -4,28 +4,6 @@
   margin: 0px;
 }
 
-.our-services {
-  max-width: 1020px;
-  margin: 0 auto;
-}
-
-.slider__main {
-  position: relative;
-  height: 594px;
-}
-
-.slider__bottom {
-  height: 6px;
-}
-
-.our-services__wrapper {
-  height: 494px;
-}
-
-.our-services__bottom {
-  height: 6px;
-}
-
 /*--------------header--------------------*/
 
 .header {
@@ -72,9 +50,8 @@
 /*--------------slider--------------------*/
 
 .slider {
-  margin: 0 auto;
+  min-height: 594px;
 }
-
 .slider__wrapper {
   max-width: 1020px;
   min-height: 594px;
@@ -120,75 +97,54 @@
 
 /*----------------our services------------------*/
 
-.our-services__main {
-  padding: 59px 40px 0 40px;
+.our-services {
+  max-height: 494px;
 }
 
-.our-services__main-container {
-  margin-top: 43px;
+.our-services__wrapper {
+  max-width: 1020px;
+  height: 494px;
+  margin: 0 auto;
+}
+
+.our-services__content {
+  padding: 60px 40px 0 40px;
+}
+
+.our-services__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-left: 0;
 }
 
-.our-services__custom-design,
-.our-services__inovative-ideas,
-.our-services__love-is-the-answer,
-.our-services__responsive-layout,
-.our-services__24-7-support,
-.our-services__feel-like-a-star {
-  width: 33.3%;
+.our-services__list li {
+  display: block;
+  max-width: 301px;
+  margin-top: 30.5px;
 }
 
-.ico-custom-design,
-.ico-inovative-ideas,
-.ico-love-is-the-answer,
-.ico-responsive-layout,
-.ico-24-7-support,
-.ico-feel-like-a-star {
+.our-services__list img {
   float: left;
-  margin-top: 3px;
+  margin-bottom: 20px;
 }
 
-.ico-responsive-layout,
-.ico-24-7-support,
-.ico-feel-like-a-star {
-  margin-top: 31px;
+.our-services__list-descriptions h3,
+.our-services__list-descriptions p {
+  display: inline-block;
+  max-width: 220px;
+  margin-left: 18px;
 }
 
-.ico-inovative-ideas,
-.ico-24-7-support {
-  padding-left: 6px;
+.our-services__list-descriptions h3 {
+  position: relative;
+  bottom: 2px;
 }
 
-.ico-love-is-the-answer,
-.ico-feel-like-a-star {
-  padding-left: 13px;
-}
-
-.our-services__custom-design-description {
-  margin-left: 80px;
-}
-
-.our-services__inovative-ideas-description {
-  margin-left: 86px;
-}
-
-.our-services__love-is-the-answer-description {
-  margin-left: 95px;
-}
-
-.our-services__responsive-layout-description {
-  margin: 28px 0 0 80px;
-}
-
-.our-services__24-7-support-description {
-  margin: 28px 0 0 86px;
-}
-
-.our-services__feel-like-a-star-description {
-  margin: 28px 0 0 95px;
+.our-services__list-descriptions p {
+  margin-top: 6px;
 }
 
 /*-------------------Typography------------------*/
@@ -200,9 +156,9 @@ body {
 .header__logo a {
   font-size: 25px;
   font-weight: 700;
-  color: #ffffff;
   letter-spacing: -0.6px;
   text-decoration: none;
+  color: #ffffff;
 }
 
 .header__logo::after {
@@ -234,71 +190,36 @@ body {
   text-decoration: none;
 }
 
-.our-services__main h2 {
+.our-services__content h2 {
   font-size: 30px;
   font-weight: 900;
   letter-spacing: -0.2px;
   color: #666d89;
 }
 
-.our-services__main-description {
-  margin-top: 18px;
+.our-services__description {
+  margin-top: 17px;
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 0.15px;
-  line-height: 30px;
+  line-height: 1.7;
   text-align: left;
   color: #767e9e;
 }
 
-.our-services__custom-design-description p,
-.our-services__inovative-ideas-description p,
-.our-services__love-is-the-answer-description p,
-.our-services__responsive-layout-description p,
-.our-services__24-7-support-description p,
-.our-services__feel-like-a-star-description p {
+.our-services__list-descriptions p {
   font-size: 12px;
   font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0px;
+  line-height: 1.8;
   color: #767e9e;
   text-align: justify;
 }
 
-.our-services__custom-design-description h3,
-.our-services__inovative-ideas-description h3,
-.our-services__love-is-the-answer-description h3,
-.our-services__responsive-layout-description h3,
-.our-services__24-7-support-description h3,
-.our-services__feel-like-a-star-description h3 {
+.our-services__list-descriptions h3 {
   font-size: 18px;
   font-weight: 900;
   letter-spacing: -0.1px;
   color: #666d89;
-}
-
-.our-services__custom-design-description p {
-  margin: 8px 13px 0 0;
-}
-
-.our-services__inovative-ideas-description p {
-  margin: 8px 7px 0 0;
-}
-
-.our-services__love-is-the-answer-description p {
-  margin: 8px 0 0 -1px;
-}
-
-.our-services__responsive-layout-description p {
-  margin: 8px 13px 0 0;
-}
-
-.our-services__24-7-support-description p {
-  margin: 8px 7px 0 0;
-}
-
-.our-services__feel-like-a-star-description p {
-  margin: 8px 0 0 -1px;
 }
 
 /*-----------Decor-------------------*/
@@ -340,12 +261,9 @@ body {
   transform: rotate(180deg);
 }
 
-.our-services__wrapper {
+.our-services {
   background-color: #f2f2f2;
-}
-
-.our-services__bottom {
-  background-color: #fff;
+  border-bottom: 6px solid #fff;
 }
 
 /*---------------------Animation------------------*/
