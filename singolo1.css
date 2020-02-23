@@ -18,11 +18,10 @@
 
 .header__content {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   min-height: 89px;
-  min-width: 600px;
   padding: 0 40px;
 }
 
@@ -34,13 +33,13 @@
 .header__navigation {
   position: relative;
   top: 4.5px;
-  max-width: 500px;
 }
 
 .navigation {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .navigation li {
@@ -60,7 +59,7 @@
 
 .slider__content {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   min-height: 594px;
@@ -98,12 +97,12 @@
 /*----------------our services------------------*/
 
 .our-services {
-  max-height: 494px;
+  min-height: 494px;
 }
 
 .our-services__wrapper {
   max-width: 1020px;
-  height: 494px;
+  min-height: 494px;
   margin: 0 auto;
 }
 
@@ -236,7 +235,7 @@ body {
 
 .navigation li:first-child::before {
   content: "";
-  margin-left: 0;
+  margin-left: 4px;
   list-style-type: none;
 }
 
