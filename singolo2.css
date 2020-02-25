@@ -46,7 +46,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: auto;
   max-width: 940px;
   max-height: 620px;
   padding: 0;
@@ -229,11 +229,12 @@ body {
 }
 
 .card h3 {
+  overflow: auto;
+  white-space: nowrap;
   font-size: 18px;
   font-weight: 900;
   letter-spacing: -0.2px;
   margin-top: 15px;
-  width: 100%;
   color: #666d89;
 }
 
@@ -321,3 +322,13 @@ body {
 }
 
 /*--------------------authors---------------------------*/
+
+.btn:hover {
+  filter: invert(100%);
+  background-color: #fff;
+  transition-duration: 0.2s;
+}
+
+.btn:active {
+  filter: brightness(80%);
+}
