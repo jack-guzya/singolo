@@ -18,6 +18,7 @@
 
 .portfolio__content {
   padding: 60px 40px 0 40px;
+  min-height: 800px;
 }
 
 .portfolio__images-switching {
@@ -133,6 +134,42 @@
   margin: 0 auto;
 }
 
+.authors__content {
+  padding: 59.5px 40px 0 40px;
+}
+
+.card__social li {
+  display: inline-block;
+}
+
+.btn {
+  padding: 8px;
+  width: 15px;
+  height: 15px;
+}
+
+.authors__cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 940px;
+  margin-top: 44px;
+}
+
+.slider__horizontal-image img {
+  max-height: 100%;
+}
+
+.card {
+  width: 300px;
+}
+
+.card__photo {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+}
+
 /*---------------------typography--------------------------*/
 
 body {
@@ -153,7 +190,7 @@ body {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.7;
-  text-align: left;
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -165,6 +202,54 @@ body {
 }
 
 /*--------------------authors---------------------------*/
+
+.authors__content h2 {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #666d89;
+}
+
+.authors__description {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  text-align: justify;
+  color: #767e9e;
+}
+
+.card__description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-top: 8px;
+  color: #767e9e;
+  text-align: justify;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  margin-top: 15px;
+  width: 100%;
+  color: #666d89;
+}
+
+.card__social {
+  margin-top: 22px;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+
+.card__social li {
+  margin-left: 4.5px;
+}
+
+.card__social li:nth-child(1) {
+  margin-left: 0px;
+}
 
 /*---------------------decor--------------------------*/
 
@@ -198,6 +283,20 @@ body {
 }
 
 /*--------------------authors---------------------------*/
+
+.btn {
+  display: inline-block;
+  border: 1px solid #656d89;
+  border-radius: 50%;
+  width: 14.5px;
+  height: 14.5px;
+}
+
+.btn img {
+  width: 14.5px;
+  height: 14.5px;
+  padding-bottom: 0.5px;
+}
 
 /*---------------------animation--------------------------*/
 
