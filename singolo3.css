@@ -1,10 +1,38 @@
 /*--------------------block model-----------------------------*/
 
+* {
+  margin: 0;
+}
+
 /*--------------------registration----------------------------*/
+
+.registration {
+    min-height: 648px;
+}
+
+.registration__wrapper {
+    max-width: 1020px;
+    margin: 0 auto
+}
 
 /*--------------------footer----------------------------------*/
 
+.footer {
+   min-height: 76px; 
+}
+
+.footer__wrapper {
+    max-width: 1020px;
+    margin: 0 auto
+}
+
+
+
 /*---------------------typography-----------------------------*/
+
+body {
+    font-family: "Lato", sans-serif;
+  }
 
 /*--------------------registration----------------------------*/
 
@@ -12,9 +40,20 @@
 
 /*---------------------decor----------------------------------*/
 
+
 /*--------------------registration----------------------------*/
 
+.registration {
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+
 /*--------------------footer----------------------------------*/
+
+.footer {
+    background-color: #2d303a;
+}
 
 /*---------------------animation------------------------------*/
 
