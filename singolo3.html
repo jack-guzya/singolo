@@ -21,39 +21,54 @@
             lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
             tortor mauris condimentum nibh.
           </p>
-          <form class="registration__form" action="#" method="POST">
-            <input
-              type="text"
-              name="username"
-              placeholder="Name (Required)"
-              required
-            />
-            <input
-              type="email"
-              name="email-address"
-              placeholder="Email (Required)"
-              required
-            />
-            <input type="text" name="subject" placeholder="Subject" />
-            <textarea
-              name="details"
-              placeholder="Describe your project in detail..."
-            ></textarea>
-            <input type="submit" name="submit" value="Submit" />
-          </form>
           <div class="registration__contacts">
-            <h3>Contact Information</h3>
-            <p>
-              Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
-              Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla
-              sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et
-              consequat felis.
-            </p>
-            <ul class="contacts-list">
-              <li>Elm St. 14/05 Lost City</li>
-              <li>03528 331 86 35</li>
-              <li>info@singolo.com</li>
-            </ul>
+            <form class="registration__contacts-form" action="#" method="post">
+              <input
+                type="text"
+                name="username"
+                placeholder="Name (Required)"
+                required
+              />
+              <input
+                type="email"
+                name="email-address"
+                placeholder="Email (Required)"
+                required
+              />
+              <input type="text" name="subject" placeholder="Subject" />
+              <textarea
+                name="details"
+                placeholder="Describe your project in detail..."
+              ></textarea>
+              <input type="submit" name="submit" value="Submit" />
+            </form>
+            <div class="registration__contacts-info">
+              <h3>Contact Information</h3>
+              <p>
+                Quisque hendrerit purus dapibus, ornare nibh vitae, viver-ra
+                nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat
+                libero. Nulla sed nunc et tortor luctus faucibus. Morbi at
+                aliquet turpis, et consequat felis.
+              </p>
+              <ul class="contacts-list">
+                <li>
+                  <img src="assets/location_contact.svg" alt="location icon" />
+                  <p>Elm St. 14/05 Lost City</p>
+                </li>
+                <li>
+                  <a href="tel:03528 331 86 35"
+                    ><img src="assets/phone_contact.svg" alt="phone icon" />
+                    <p>03528 331 86 35</p></a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:info@singolo.com"
+                    ><img src="assets/mail_contact.svg" alt="mail icon" />
+                    <p>info@singolo.com</p></a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
