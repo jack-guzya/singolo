@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Singolo</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <section class="registration">
+      <div class="registration__wrapper">
+        <div class="registration__content">
+          <h2>Get a Quote</h2>
+          <p class="registration__description">
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+            Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget
+            lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
+            tortor mauris condimentum nibh.
+          </p>
+          <form class="registration__form" action="#" method="POST">
+            <input
+              type="text"
+              name="username"
+              placeholder="Name (Required)"
+              required
+            />
+            <input
+              type="email"
+              name="email-address"
+              placeholder="Email (Required)"
+              required
+            />
+            <input type="text" name="subject" placeholder="Subject" />
+            <textarea
+              name="details"
+              cols="30"
+              rows="10"
+              placeholder="Describe your project in detail..."
+            >
+            </textarea>
+            <input type="submit" name="submit" value="Submit" />
+          </form>
+          <div class="registration__contacts">
+            <h3>Contact Information</h3>
+            <p>
+              Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
+              Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla
+              sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et
+              consequat felis.
+            </p>
+            <ul class="contacts-list">
+              <li>Elm St. 14/05 Lost City</li>
+              <li>03528 331 86 35</li>
+              <li>info@singolo.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p>&copy;Copyright 2013</p>
+      <ul class="footer__social">
+        <li>
+          <a class="btn" href="#">
+            <img src="assets/facebook.svg" alt="facebook" />
+          </a>
+        </li>
+        <li>
+          <a class="btn" href="#">
+            <img src="assets/google.svg" alt="google+" />
+          </a>
+        </li>
+        <li>
+          <a class="btn" href="#">
+            <img src="assets/twitter.svg" alt="twitter" />
+          </a>
+        </li>
+        <li>
+          <a class="btn" href="#">
+            <img src="assets/linkeIn.svg" alt="LinkedIn" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>
