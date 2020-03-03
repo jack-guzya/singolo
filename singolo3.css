@@ -105,6 +105,37 @@
   margin: 0 auto;
 }
 
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  min-width: 260px;
+  padding: 22px 40px 0 42px;
+}
+
+.footer__content p {
+  margin-top: 7px;
+}
+
+.footer__social {
+  padding-left: 0;
+}
+
+.footer__social li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.footer__social li:last-child {
+  display: inline-block;
+  margin-right: 0px;
+}
+
+.btn {
+  padding: 8px;
+  width: 15px;
+  height: 15px;
+}
+
 /*---------------------typography--------------------------------------*/
 
 body {
@@ -180,6 +211,19 @@ body {
 }
 /*--------------------footer----------------------------------*/
 
+.footer__content {
+  font-size: 11px;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  text-align: justify;
+  color: #626984;
+}
+
+.footer__content p::before {
+  content: "\00A9";
+  margin-right: 2px;
+}
 /*---------------------decor-------------------------------------------*/
 
 /*--------------------registration----------------------------*/
@@ -210,6 +254,20 @@ body {
   background-color: #2d303a;
 }
 
+.btn {
+  display: inline-block;
+  width: 14.5px;
+  height: 14.5px;
+  border: 1px solid #656d89;
+  border-radius: 50%;
+}
+
+.btn img {
+  width: 14.5px;
+  height: 14.5px;
+  padding-bottom: 0.5px;
+}
+
 /*---------------------animation---------------------------------------*/
 
 /*--------------------registration----------------------------*/
@@ -225,3 +283,13 @@ body {
 }
 
 /*--------------------footer----------------------------------*/
+
+.btn:hover {
+  background-color: #fff;
+  transition-duration: 0.2s;
+}
+
+.btn:active {
+  filter: invert(80%);
+  transition-duration: 0s;
+}
