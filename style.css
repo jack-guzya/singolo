@@ -16,9 +16,10 @@
 .authors,
 .registration,
 .footer {
-  min-width: 490px;
+  min-width: 830px;
 }
 
+.slider__content,
 .our-services__content,
 .portfolio__content,
 .authors__content,
@@ -70,41 +71,70 @@
 
 .slider__content {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  min-height: 594px;
 }
 
-.slider__button-right,
-.slider__button-left,
-.slider__vertical-image,
-.slider__horizontal-image {
+.slider__phone-vertical {
   position: relative;
-  margin: 20px;
+  z-index: 5;
+  margin-right: 163px;
+  margin-top: -7.5px;
+}
+
+.image-screen {
+  position: absolute;
+  overflow: hidden;
+  top: 66px;
+  left: 16px;
+  width: 188px;
+  height: 333px;
+}
+
+.phone-vertical__image .image-screen img {
+  position: relative;
+  bottom: 135px;
+  right: 14px;
+}
+
+.phone-horizontal__image .image-screen img {
+  position: relative;
+  transform: rotate(-90deg);
+  bottom: 122px;
+  right: 119px;
+}
+
+.slider__phone-horizontal {
+  position: relative;
+  transform: rotate(90deg);
+  z-index: 5;
+  margin-right: 149px;
+  margin-top: -15px;
+}
+
+.phone-vertical__image::after,
+.phone-horizontal__image::after {
+  content: url(assets/shadow.png);
+  position: absolute;
+  left: 2px;
+  top: 1px;
+  z-index: -1;
+}
+
+.phone-horizontal__image::after {
+  transform: rotateX(180deg);
+  bottom: 7px;
 }
 
 .slider__button-left {
-  left: 22px;
-  bottom: 0.5px;
+  margin-top: 15px;
+  margin-left: 2px;
 }
 
 .slider__button-right {
-  right: 20px;
-  bottom: 4.5px;
-}
-
-.slider__vertical-image {
-  right: 9.2px;
-  top: 0.5px;
-  margin-right: 5px;
-}
-
-.slider__horizontal-image {
-  left: 7px;
-  bottom: 1.35px;
-  margin-left: 5.5px;
-  max-width: 100%;
+  margin-top: 10px;
+  margin-left: 2px;
 }
 
 /*----------------our services------------------*/
