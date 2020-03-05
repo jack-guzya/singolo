@@ -4,13 +4,7 @@
   margin: 0px;
 }
 
-.header__wrapper,
-.slider__wrapper,
-.our-services__wrapper,
-.portfolio__wrapper,
-.authors__wrapper,
-.registration__wrapper,
-.footer__wrapper {
+.wrapper {
   max-width: 1020px;
   margin: 0 auto;
 }
@@ -203,7 +197,7 @@
 }
 
 .portfolio__presentation li:nth-child(1n + 13) {
-  display: none
+  display: none;
 }
 
 .portfolio__presentation img {
@@ -450,29 +444,21 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.our-services__content h2,
-.portfolio__content h2,
-.authors__content h2,
-.registration__content h2 {
+h2 {
   font-size: 30px;
   font-weight: 900;
   letter-spacing: -0.2px;
   color: #666d89;
 }
 
-.our-services__list-descriptions h3,
-.card h3,
-.registration__contacts-info h3 {
+h3 {
   font-size: 18px;
   font-weight: 900;
   letter-spacing: -0.1px;
   color: #666d89;
 }
 
-.our-services__description,
-.portfolio__description,
-.authors__description,
-.registration__description {
+.content-description {
   margin-top: 17px;
   font-size: 18px;
   font-weight: 400;
