@@ -78,7 +78,7 @@
 
 .slider__phone-vertical {
   position: relative;
-  z-index: 5;
+  z-index: 1;
   margin-right: 163px;
   margin-top: -7.5px;
 }
@@ -107,13 +107,20 @@
 
 .slider__phone-horizontal {
   position: relative;
+  z-index: 1;
   transform: rotate(90deg);
-  z-index: 5;
   margin-right: 149px;
   margin-top: -15px;
 }
 
-.phone-vertical__image::after,
+.phone-vertical__image::after {
+  content: url(assets/shadow.png);
+  position: absolute;
+  left: 2px;
+  top: 1px;
+  z-index: -1;
+}
+
 .phone-horizontal__image::after {
   content: url(assets/shadow.png);
   position: absolute;
@@ -154,6 +161,7 @@
 
 .our-services__list li {
   display: block;
+  overflow: hidden;
   max-width: 301px;
   margin-top: 30px;
   margin-bottom: 1px;
@@ -332,16 +340,23 @@
 }
 
 .card h3 {
-  overflow: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
   margin-top: 14.5px;
   margin-left: -1px;
 }
 
 .card__social {
-  margin-top: 23px;
+  margin-top: 23.5px;
   margin-bottom: 20px;
   padding: 0px;
+}
+
+.btn img {
+  position: relative;
+  bottom: 1px;
+  left: 0.5px;
 }
 
 .card__social li {
@@ -392,7 +407,7 @@
 
 .registration__contacts-info {
   margin-bottom: 40px;
-  max-width: 302px;
+  max-width: 301px;
   max-height: 200px;
 }
 
@@ -464,8 +479,8 @@
 
 .btn {
   padding: 8px;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
 }
 
 /*-------------------Typography------------------*/
@@ -565,6 +580,18 @@ h3 {
   color: #f0d8d9;
 }
 
+.registration p {
+  letter-spacing: -0.1px;
+}
+
+.registration__content .content-description {
+  letter-spacing: -0.23px;
+}
+
+.contacts-list p {
+  letter-spacing: 0px;
+}
+
 .registration__contacts-form input,
 .registration__contacts-form textarea {
   font-family: "Lato", sans-serif;
@@ -603,11 +630,6 @@ h3 {
   letter-spacing: 0.4px;
   text-align: justify;
   color: #626984;
-}
-
-.footer__content p::before {
-  content: "\00A9";
-  margin-right: 2px;
 }
 
 /*-----------Decor-------------------*/
