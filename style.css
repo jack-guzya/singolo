@@ -30,6 +30,9 @@
 /*-------------------header--------------------*/
 
 .header {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
   min-height: 88.5px;
 }
 
@@ -768,6 +771,10 @@ h3 {
 /*---------------------Animation------------------*/
 
 /*-------------------header------------------*/
+
+li.navigation_active a {
+  color: #f06c64;
+}
 
 .navigation a:hover {
   color: #f06c64;
