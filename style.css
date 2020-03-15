@@ -223,9 +223,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  overflow: auto;
-  max-width: 940px;
-  max-height: 620px;
+  /*overflow: auto;
+  /*max-width: 940px;*/
+  /*max-height: 620px;*/
   padding: 0;
 }
 
@@ -836,6 +836,11 @@ li.navigation_active a {
 button.images-switching_active {
   border: 1px solid #c5c5c5;
   color: #c5c5c5;
+}
+
+li.presentation_active {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px #F06C64;
 }
 
 /*--------------------authors---------------------------*/

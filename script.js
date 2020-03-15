@@ -133,3 +133,11 @@ if (event.target.innerHTML == 'Artwork') {
  }
 }
 });
+
+
+//--------------------------------------------------PORTFOLIO IMAGES----------------------------
+
+PORTFOLIO_IMAGES.addEventListener('click', (event) => {
+  PORTFOLIO_IMAGES.querySelectorAll('li').forEach(elem => elem.classList.remove('presentation_active'));
+  event.target.closest('li').classList.add('presentation_active')
+})
