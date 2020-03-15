@@ -243,6 +243,8 @@
 
 .portfolio__presentation img {
   position: relative;
+  transition-duration: 1s;
+  transition-timing-function: ease;
 }
 
 .portfolio__presentation li:nth-child(1) img {
@@ -827,6 +829,11 @@ li.navigation_active a {
 
 .portfolio__images-switching button:focus {
   outline: none;
+  border: 1px solid #c5c5c5;
+  color: #c5c5c5;
+}
+
+button.images-switching_active {
   border: 1px solid #c5c5c5;
   color: #c5c5c5;
 }
