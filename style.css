@@ -86,8 +86,7 @@
   margin-top: -7.5px;
 }
 div.phone-vertical__button,
-div.phone-horizontal__button
-{
+div.phone-horizontal__button {
   display: block;
   position: absolute;
   width: 42px;
@@ -463,6 +462,58 @@ div.phone-horizontal__button
   top: 3.5px;
 }
 
+.registration__block-message {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #0006;
+  opacity: 0;
+}
+
+.block-message__message {
+  position: relative;
+  top: 20vh;
+  margin: 0 auto;
+  width: 50%;
+  max-height: 70%;
+  background-color: #c5c5c5e5;
+  box-shadow: 0 0 10px 15px #c5c5c5e5;
+  padding: 15px 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.block-message__message h3 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.message__theme {
+  margin-top: 10px;
+}
+
+.message__description {
+  margin-top: 3px;
+  max-width: 100%;
+  max-height: 40vh;
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+.message__btn {
+  margin-top: 15px;
+  width: 50px;
+  background-color: transparent;
+  border: 2px solid #575b68a1;
+  border-radius: 10%;
+  padding: 5px;
+}
+
 /*--------------------footer----------------------------------*/
 
 .footer {
@@ -690,14 +741,14 @@ h3 {
 
 div.phone-vertical__button:hover,
 div.phone-horizontal__button:hover {
-  background-color:black;
+  background-color: black;
   opacity: 0.2;
   transition-duration: 0.3s;
 }
 
 div.phone-vertical__button:active,
 div.phone-horizontal__button:active {
-  background-color:black;
+  background-color: black;
   opacity: 0.4;
 }
 
@@ -773,6 +824,12 @@ div.phone-horizontal__button:active {
 
 .contacts-list img {
   filter: invert(90%);
+}
+
+.block-message__message h3,
+.block-message__message p,
+.block-message__message button {
+  color: #4a4e5c;
 }
 
 /*--------------------footer----------------------------------*/
@@ -865,7 +922,7 @@ button.images-switching_active {
 
 li.presentation_active {
   box-sizing: border-box;
-  box-shadow: 0 0 0 5px #F06C64;
+  box-shadow: 0 0 0 5px #f06c64;
 }
 
 /*--------------------authors---------------------------*/
@@ -890,4 +947,10 @@ li.presentation_active {
 .registration__contacts-form input[type="submit"]:active {
   background-color: #d6564f;
   transition-duration: 0s;
+}
+
+.message__btn:hover {
+  background-color: #c5c5c5;
+  filter: invert(100%);
+  transition-duration: 0.3s;
 }
