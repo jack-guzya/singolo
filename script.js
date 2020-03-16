@@ -141,3 +141,26 @@ PORTFOLIO_IMAGES.addEventListener('click', (event) => {
   PORTFOLIO_IMAGES.querySelectorAll('li').forEach(elem => elem.classList.remove('presentation_active'));
   event.target.closest('li').classList.add('presentation_active')
 })
+
+//-----------------------------------------------BUTTON OF PHONE------------------------------
+
+let switchVerticalScreen = true,
+    switchHorizontalScreen = true;
+
+document.querySelector('div.phone-vertical__button').addEventListener('click', () => {
+  switchVerticalScreen = !switchVerticalScreen;
+  if (!switchVerticalScreen) {
+    document.querySelector('div.phone-vertical__image').children[0].children[0].style.opacity = '0'
+    document.querySelector('div.phone-vertical__image').children[0].children[0].style.transitionDuration = '0.5s'
+  }
+  else document.querySelector('div.phone-vertical__image').children[0].children[0].style.opacity = '1'
+})
+
+document.querySelector('div.phone-horizontal__button').addEventListener('click', (event) => {
+  switchHorizontalScreen = !switchHorizontalScreen;
+  if (!switchHorizontalScreen) {
+    document.querySelector('div.phone-horizontal__image').children[0].children[0].style.opacity = '0'
+    document.querySelector('div.phone-horizontal__image').children[0].children[0].style.transitionDuration = '0.5s'
+  }
+  else document.querySelector('div.phone-horizontal__image').children[0].children[0].style.opacity = '1'
+})

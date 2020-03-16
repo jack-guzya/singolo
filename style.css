@@ -85,6 +85,18 @@
   margin-right: 163px;
   margin-top: -7.5px;
 }
+div.phone-vertical__button,
+div.phone-horizontal__button
+{
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  top: 408px;
+  left: 88px;
+  z-index: 2;
+  border-radius: 50%;
+}
 
 .image-screen {
   position: absolute;
@@ -674,6 +686,19 @@ h3 {
 
 .slider__button-right {
   transform: rotate(180deg);
+}
+
+div.phone-vertical__button:hover,
+div.phone-horizontal__button:hover {
+  background-color:black;
+  opacity: 0.2;
+  transition-duration: 0.3s;
+}
+
+div.phone-vertical__button:active,
+div.phone-horizontal__button:active {
+  background-color:black;
+  opacity: 0.4;
 }
 
 /*-------------our services------------------*/
