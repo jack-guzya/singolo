@@ -40,31 +40,45 @@
       </div>
     </header>
     <main>
-      <div class="slider">
+      <div class="slider first-background">
         <div class="wrapper">
           <div class="slider__content">
-            <button class="slider__button-left">
+            <div class="slide grid">
+              <div class="slider__phone-vertical">
+                <div class="phone-vertical__image">
+                  <div class="phone-vertical__button"></div>
+                  <div class="image-screen">
+                    <img src="assets/monsters_1.png" alt="monsters" />
+                  </div>
+                  <img
+                    src="assets/iphone_vertical_no-screen.png"
+                    alt="iphone"
+                  />
+                </div>
+              </div>
+              <div class="slider__phone-horizontal">
+                <div class="phone-horizontal__image">
+                  <div class="phone-horizontal__button"></div>
+                  <div class="image-screen">
+                    <img src="assets/monsters_2.png" alt="monsters" />
+                  </div>
+                  <img
+                    class="horizontal"
+                    src="assets/iphone_vertical_no-screen.png"
+                    alt="iphone"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="slide hideSlide">
+              <img src="assets/Slider.png" alt="" />
+            </div>
+          </div>
+          <div class="slider__block-buttons">
+            <button class="block-buttons__button-left">
               <img src="assets/chev_left.svg" alt="left" />
             </button>
-            <div class="slider__phone-vertical">
-              <div class="phone-vertical__button"></div>
-              <div class="phone-vertical__image">
-                <div class="image-screen">
-                  <img src="assets/monsters_1.png" alt="monsters" />
-                </div>
-                <img src="assets/iphone_vertical_no-screen.png" alt="iphone" />
-              </div>
-            </div>
-            <div class="slider__phone-horizontal">
-              <div class="phone-horizontal__button"></div>
-              <div class="phone-horizontal__image">
-                <div class="image-screen">
-                  <img src="assets/monsters_2.png" alt="monsters" />
-                </div>
-                <img src="assets/iphone_vertical_no-screen.png" alt="iphone" />
-              </div>
-            </div>
-            <button class="slider__button-right">
+            <button class="block-buttons__button-right">
               <img src="assets/chev_left.svg" alt="right" />
             </button>
           </div>
@@ -317,7 +331,7 @@
               </form>
               <div class="registration__block-message hidden">
                 <div class="block-message__message">
-                  <h3>The Letter was sent</h3>
+                  <h3>The letter was sent</h3>
                   <p class="message__theme">Without subject</p>
                   <p class="message__description">Without description</p>
                   <button class="message__btn">ОК</button>

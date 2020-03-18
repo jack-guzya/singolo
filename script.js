@@ -210,14 +210,14 @@ document
     if (!switchVerticalScreen) {
       document.querySelector(
         "div.phone-vertical__image"
-      ).children[0].children[0].style.opacity = "0";
+      ).children[1].style.opacity = "0";
       document.querySelector(
         "div.phone-vertical__image"
-      ).children[0].children[0].style.transitionDuration = "0.5s";
+      ).children[1].style.transitionDuration = "0.5s";
     } else
       document.querySelector(
         "div.phone-vertical__image"
-      ).children[0].children[0].style.opacity = "1";
+      ).children[1].style.opacity = "1";
   });
 
 document
@@ -227,14 +227,14 @@ document
     if (!switchHorizontalScreen) {
       document.querySelector(
         "div.phone-horizontal__image"
-      ).children[0].children[0].style.opacity = "0";
+      ).children[1].style.opacity = "0";
       document.querySelector(
         "div.phone-horizontal__image"
-      ).children[0].children[0].style.transitionDuration = "0.5s";
+      ).children[1].style.transitionDuration = "0.5s";
     } else
       document.querySelector(
         "div.phone-horizontal__image"
-      ).children[0].children[0].style.opacity = "1";
+      ).children[1].style.opacity = "1";
   });
 
 //------------------------------------------------REGISTRATION MESSAGE---------------------------
@@ -278,3 +278,77 @@ document.querySelector("button.message__btn").onclick = () => {
   setInterval(() => clearInterval(removeMessage), 1000);
   setTimeout(() => BLOCK_MESSAGE.classList.add("hidden"), 1000);
 };
+
+//------------------------------------------SLIDER-----------------------------------------------
+
+const BUTTON_LEFT = document.querySelector("button.block-buttons__button-left"),
+  BUTTON_RIGHT = document.querySelector("button.block-buttons__button-right"),
+  SLIDE = document.querySelectorAll("div.slide"),
+  SLIDER = document.querySelector("div.slider");
+
+let currentSlide = 0,
+  nextSlide = 0;
+
+function changeCurrentSlide(n) {
+  return (n + SLIDE.length) % SLIDE.length;
+}
+
+function showSlide(n) {
+  SLIDE[n].classList.remove("hideSlide");
+}
+
+function hideSlide(n) {
+  SLIDE[n].classList.add("hideSlide");
+}
+
+function addDirection(n, direction) {
+  SLIDE[n].classList.add(direction);
+}
+
+function delDirection(n, direction) {
+  SLIDE[n].classList.remove(direction);
+}
+
+function delDirectionAll() {
+  for (let i = 0; i < SLIDE.length; i++) {
+    SLIDE[i].classList.remove("to-left");
+    SLIDE[i].classList.remove("to-right");
+    SLIDE[i].classList.remove("from-left");
+    SLIDE[i].classList.remove("from-right");
+  }
+}
+
+function delBackground(n, slider) {
+  if (n == 0) slider.classList.remove("first-background");
+  else if (n == 1) slider.classList.remove("second-background");
+}
+
+function addBackground(nextSlide, slider) {
+  if (nextSlide == 0) slider.classList.add("first-background");
+  else if (nextSlide == 1) slider.classList.add("second-background");
+}
+
+BUTTON_LEFT.addEventListener("click", () => {
+  nextSlide = changeCurrentSlide(currentSlide - 1);
+  delBackground(currentSlide, SLIDER);
+  addBackground(nextSlide, SLIDER);
+  showSlide(nextSlide);
+  showSlide(currentSlide);
+  addDirection(currentSlide, "to-right");
+  addDirection(nextSlide, "from-left");
+});
+SLIDE[nextSlide].addEventListener("animationend", () => {
+  hideSlide(currentSlide);
+  delDirectionAll();
+  currentSlide = nextSlide;
+});
+
+BUTTON_RIGHT.addEventListener("click", () => {
+  nextSlide = changeCurrentSlide(currentSlide - 1);
+  delBackground(currentSlide, SLIDER);
+  addBackground(nextSlide, SLIDER);
+  showSlide(nextSlide);
+  showSlide(currentSlide);
+  addDirection(currentSlide, "to-left");
+  addDirection(nextSlide, "from-right");
+});
