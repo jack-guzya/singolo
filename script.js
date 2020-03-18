@@ -270,6 +270,7 @@ FORM.onsubmit = () => {
 };
 
 document.querySelector("button.message__btn").onclick = () => {
+  for (let i = 0; i < FORM.length - 1; i++) FORM.children[i].value = "";
   let removeMessage = setInterval(() => {
     BLOCK_MESSAGE.style.opacity = String(
       +getComputedStyle(BLOCK_MESSAGE).opacity - 0.01
