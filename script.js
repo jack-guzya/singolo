@@ -1,13 +1,85 @@
 //----------------------------------------------------NAVIGATION------------------------------------
 
-const NAVIGATION = document.querySelector("ul.navigation");
+const NAVIGATION = document.querySelector("ul.navigation"),
+  ANCHORS = document.querySelectorAll('a[href^="#"]');
 
-NAVIGATION.addEventListener("click", event => {
-  NAVIGATION.querySelectorAll("li").forEach(elem =>
-    elem.classList.remove("navigation_active")
-  );
-  event.target.closest("li").classList.add("navigation_active");
-});
+let enabled = true;
+
+function getCoordinate(elem) {
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + pageYOffset
+  };
+}
+
+for (let anchor of ANCHORS) {
+  if (/#.+/.test(anchor.href)) {
+    anchor.addEventListener("click", function(event) {
+      // event to navigation buttons
+      event.preventDefault(); // remove default event
+      if (!enabled) return;
+
+      NAVIGATION.querySelectorAll("li").forEach((
+        elem // add class active
+      ) => elem.classList.remove("navigation_active"));
+      event.target.closest("li").classList.add("navigation_active");
+
+      const blockID = anchor.getAttribute("href").substr(1); //id section
+      let heightHeader =
+          +getComputedStyle(document.querySelector("header"))
+            .height.match(/\-*\d*\.\d*/g)
+            .join("") + 6,
+        relativelyTop = document.getElementById(blockID).getBoundingClientRect()
+          .top,
+        step = 1,
+        scrollDown,
+        scrollUp;
+
+      enabled = false;
+
+      if (relativelyTop >= heightHeader) {
+        // DOWN
+        scrollDown = setTimeout(function iter() {
+          relativelyTop = document
+            .getElementById(blockID)
+            .getBoundingClientRect().top;
+
+          if (relativelyTop < 180) step = Math.sqrt(step);
+          else step += 1;
+
+          window.scrollBy(0, step);
+
+          if (relativelyTop >= heightHeader) {
+            scrollDown = setTimeout(iter, 1);
+          }
+        }, 1);
+      } else {
+        //UP
+        scrollUp = setTimeout(function iter() {
+          relativelyTop = document
+            .getElementById(blockID)
+            .getBoundingClientRect().top;
+
+          if (relativelyTop > -50) step = Math.sqrt(step);
+          else step += 1;
+
+          window.scrollBy(0, -step);
+
+          if (relativelyTop < heightHeader) {
+            scrollUp = setTimeout(iter, 1);
+          }
+        }, 1);
+      }
+
+      setTimeout(() => {
+        enabled = true;
+        clearInterval(scrollDown);
+        clearInterval(scrollUp);
+      }, 1000);
+    });
+  }
+}
 
 //--------------------------------------------------PORTFOLIO BUTTONS----------------------------
 

@@ -32,7 +32,7 @@
 .header {
   position: sticky;
   top: 0px;
-  z-index: 2;
+  z-index: 100;
   min-height: 88.5px;
 }
 
@@ -1090,4 +1090,11 @@ li.presentation_active {
   background-color: #c5c5c5;
   filter: invert(100%);
   transition-duration: 0.3s;
+}
+
+/*-------------------------BODY------------------------------*/
+
+.section-switch {
+  background-color: #000;
+  opacity: 0.5;
 }
