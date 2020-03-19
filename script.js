@@ -1,9 +1,11 @@
 //----------------------------------------------------NAVIGATION------------------------------------
 
 const NAVIGATION = document.querySelector("ul.navigation"),
-  ANCHORS = document.querySelectorAll('a[href^="#"]');
+      ANCHORS = document.querySelectorAll('a[href^="#"]');
 
-let enabled = true;
+let enabled = true,
+    relativeTopList = {},
+    heightHeader = +getComputedStyle(document.querySelector("header")).height.match(/\-*\d*\.\d*/g).join("") + 6;
 
 function getCoordinate(elem) {
   let box = elem.getBoundingClientRect();
@@ -13,24 +15,29 @@ function getCoordinate(elem) {
   };
 }
 
+function addActive(event) {
+  NAVIGATION.querySelectorAll("li").forEach((
+    elem // add class active
+  ) => elem.classList.remove("navigation_active"));
+  event.closest("li").classList.add("navigation_active");
+}
+
 for (let anchor of ANCHORS) {
   if (/#.+/.test(anchor.href)) {
+
+    let blockId = anchor.getAttribute("href").substr(1),
+    block = document.getElementById(blockId);
+    
+    relativeTopList[blockId] = block.offsetTop
+
     anchor.addEventListener("click", function(event) {
+
       // event to navigation buttons
       event.preventDefault(); // remove default event
       if (!enabled) return;
 
-      NAVIGATION.querySelectorAll("li").forEach((
-        elem // add class active
-      ) => elem.classList.remove("navigation_active"));
-      event.target.closest("li").classList.add("navigation_active");
-
       const blockID = anchor.getAttribute("href").substr(1); //id section
-      let heightHeader =
-          +getComputedStyle(document.querySelector("header"))
-            .height.match(/\-*\d*\.\d*/g)
-            .join("") + 6,
-        relativelyTop = document.getElementById(blockID).getBoundingClientRect()
+      let relativelyTop = document.getElementById(blockID).getBoundingClientRect()
           .top,
         step = 1,
         scrollDown,
@@ -50,7 +57,7 @@ for (let anchor of ANCHORS) {
 
           window.scrollBy(0, step);
 
-          if (relativelyTop >= heightHeader) {
+          if (relativelyTop >= heightHeader - 3) {
             scrollDown = setTimeout(iter, 1);
           }
         }, 1);
@@ -66,7 +73,7 @@ for (let anchor of ANCHORS) {
 
           window.scrollBy(0, -step);
 
-          if (relativelyTop < heightHeader) {
+          if (relativelyTop < heightHeader - 3) {
             scrollUp = setTimeout(iter, 1);
           }
         }, 1);
@@ -80,6 +87,12 @@ for (let anchor of ANCHORS) {
     });
   }
 }
+
+document.addEventListener("scroll", () => {
+  for (let anchor in relativeTopList) 
+  if (window.scrollY > relativeTopList[anchor] - heightHeader) addActive ((NAVIGATION.querySelector('a[href^="#' + anchor + '"]')))
+});
+
 
 //--------------------------------------------------PORTFOLIO BUTTONS----------------------------
 
