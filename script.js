@@ -96,6 +96,51 @@ document.addEventListener("scroll", () => {
       addActive(NAVIGATION.querySelector('a[href^="#' + anchor + '"]'));
 });
 
+//--------------------------------------------------BURGER MENU---------------------------------
+
+const BURGER_MENU_BUTTON = document.querySelector("div.burger-menu"),
+  HEADER_NAVIGATION = document.querySelector("nav.header__navigation");
+
+let status = false,
+  resolution = true;
+
+function show() {
+  HEADER_NAVIGATION.classList.remove("burger-right");
+  status = true;
+  resolution = true;
+  HEADER_NAVIGATION.removeEventListener("animationend", show);
+}
+
+function hide() {
+  HEADER_NAVIGATION.classList.add("burger-hide");
+  HEADER_NAVIGATION.classList.remove("burger-left");
+  status = false;
+  resolution = true;
+  HEADER_NAVIGATION.removeEventListener("animationend", hide);
+}
+
+BURGER_MENU_BUTTON.addEventListener("click", () => {
+  if (resolution) {
+    resolution = false;
+    switch (status) {
+      case false:
+        BURGER_MENU_BUTTON.classList.remove("rotation-left")
+        BURGER_MENU_BUTTON.classList.add("rotation-right")
+        HEADER_NAVIGATION.classList.remove("burger-hide");
+        HEADER_NAVIGATION.classList.add("burger-right");
+        HEADER_NAVIGATION.addEventListener("animationend", show);
+        break;
+      case true:
+        BURGER_MENU_BUTTON.classList.remove("rotation-right")
+        BURGER_MENU_BUTTON.classList.add("rotation-left")
+        HEADER_NAVIGATION.classList.remove("burger-right");
+        HEADER_NAVIGATION.classList.add("burger-left");
+        HEADER_NAVIGATION.addEventListener("animationend", hide);
+        break;
+    }
+  }
+});
+
 //--------------------------------------------------PORTFOLIO BUTTONS----------------------------
 
 const IMAGES_SWITCHING = document.querySelector(
@@ -244,13 +289,13 @@ let screenMessage = false,
 FORM.onsubmit = () => {
   BLOCK_MESSAGE.classList.remove("hidden");
   if (/^\s*$/.test(FORM.children[2].value))
-    themeMessage.innerHTML = "Without subject";
+    themeMessage.innerHTML = "No subject";
   else {
     themeMessage.innerHTML = "Subject: " + FORM.children[2].value;
   }
 
   if (/^\s*$/.test(FORM.children[3].value))
-    descriptionMessage.innerHTML = "Without description";
+    descriptionMessage.innerHTML = "No description";
   else {
     descriptionMessage.innerHTML = "Description: " + FORM.children[3].value;
   }
