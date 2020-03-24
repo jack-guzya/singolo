@@ -47,7 +47,6 @@
 .header__logo {
   position: relative;
   bottom: 2.5px;
-  
 }
 
 .burger__logo {
@@ -1419,6 +1418,15 @@ li.presentation_active {
     width: 15px;
   }
 
+  div.phone-vertical__button {
+    top: 87%;
+  }
+
+  div.phone-horizontal__button {
+    top: 44.5%;
+    left: -17.8%;
+  }
+
   .slider__content::before {
     content: "";
     float: left;
@@ -1485,7 +1493,7 @@ li.presentation_active {
   }
 
   .portfolio__presentation img {
-    height: 97%;
+    height: 100%;
   }
 
   .portfolio__presentation li:nth-child(1n + 9) {
@@ -1611,5 +1619,16 @@ li.presentation_active {
 
   .footer__content p {
     display: none;
+  }
+}
+
+@media (max-width: 374px) {
+  div.our-services__content {
+    padding: 7% 7% 44.2% 8.3%;
+  }
+
+  .portfolio__images-switching > button {
+    font-size: 10px;
+    padding: 3px 4px;
   }
 }
