@@ -34,58 +34,58 @@ for (let anchor of ANCHORS) {
 
     anchor.addEventListener("click", function(event) {
       // event to navigation buttons
-      event.preventDefault(); // remove default event
-      if (!enabled) return;
+   event.preventDefault(); // remove default event
+   if (!enabled) return;
 
-      const blockID = anchor.getAttribute("href").substr(1); //id section
-      let relativelyTop = document
-          .getElementById(blockID)
-          .getBoundingClientRect().top,
-        step = 1,
-        scrollDown,
-        scrollUp;
+   const blockID = anchor.getAttribute("href").substr(1); //id section
+   let relativelyTop = document
+       .getElementById(blockID)
+       .getBoundingClientRect().top,
+     step = 1,
+     scrollDown,
+     scrollUp;
 
-      enabled = false;
+   enabled = false;
 
-      if (relativelyTop >= heightHeader) {
-        // DOWN
-        scrollDown = setTimeout(function iter() {
-          relativelyTop = document
-            .getElementById(blockID)
-            .getBoundingClientRect().top;
+   if (relativelyTop >= heightHeader) {
+     // DOWN
+     scrollDown = setTimeout(function iter() {
+       relativelyTop = document
+         .getElementById(blockID)
+         .getBoundingClientRect().top;
 
-          if (relativelyTop < 180) step = Math.sqrt(step);
-          else step += 1;
+       if (relativelyTop < 180) step = Math.sqrt(step);
+       else step += 1;
 
-          window.scrollBy(0, step);
+       window.scrollBy(0, step);
 
-          if (relativelyTop >= heightHeader - 3) {
-            scrollDown = setTimeout(iter, 1);
-          }
-        }, 1);
-      } else {
-        //UP
-        scrollUp = setTimeout(function iter() {
-          relativelyTop = document
-            .getElementById(blockID)
-            .getBoundingClientRect().top;
+       if (relativelyTop >= heightHeader - 3) {
+         scrollDown = setTimeout(iter, 1);
+       }
+     }, 1);
+   } else {
+     //UP
+     scrollUp = setTimeout(function iter() {
+       relativelyTop = document
+         .getElementById(blockID)
+         .getBoundingClientRect().top;
 
-          if (relativelyTop > -50) step = Math.sqrt(step);
-          else step += 1;
+       if (relativelyTop > -50) step = Math.sqrt(step);
+       else step += 1;
 
-          window.scrollBy(0, -step);
+       window.scrollBy(0, -step);
 
-          if (relativelyTop < heightHeader - 3) {
-            scrollUp = setTimeout(iter, 1);
-          }
-        }, 1);
-      }
+       if (relativelyTop < heightHeader - 3) {
+         scrollUp = setTimeout(iter, 1);
+       }
+     }, 1);
+   }
 
-      setTimeout(() => {
-        enabled = true;
-        clearInterval(scrollDown);
-        clearInterval(scrollUp);
-      }, 1000);
+   setTimeout(() => {
+     enabled = true;
+     clearInterval(scrollDown);
+     clearInterval(scrollUp);
+   }, 1000);
     });
   }
 }
@@ -119,7 +119,7 @@ function hide() {
   HEADER_NAVIGATION.removeEventListener("animationend", hide);
 }
 
-BURGER_MENU_BUTTON.addEventListener("click", () => {
+function burgerMenu () {
   if (resolution) {
     resolution = false;
     switch (status) {
@@ -139,7 +139,10 @@ BURGER_MENU_BUTTON.addEventListener("click", () => {
         break;
     }
   }
-});
+}
+
+BURGER_MENU_BUTTON.addEventListener("click", burgerMenu);
+BURGER_MENU_BUTTON.addEventListener("touchstart", burgerMenu);
 
 //--------------------------------------------------PORTFOLIO BUTTONS----------------------------
 
