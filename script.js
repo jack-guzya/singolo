@@ -7,7 +7,7 @@ let enabled = true,
   relativeTopList = {},
   heightHeader =
     +getComputedStyle(document.querySelector("header"))
-      .height.match(/\-*\d*\.\d*/g)
+      .height.match(/\-*\d*\.*\d*/g)
       .join("") + 6;
 
 function getCoordinate(elem) {
@@ -142,7 +142,6 @@ function burgerMenu () {
 }
 
 BURGER_MENU_BUTTON.addEventListener("click", burgerMenu);
-BURGER_MENU_BUTTON.addEventListener("touchstart", burgerMenu);
 
 //--------------------------------------------------PORTFOLIO BUTTONS----------------------------
 
