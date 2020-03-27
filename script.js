@@ -3,8 +3,7 @@
 const NAVIGATION = document.querySelector("ul.navigation"),
   ANCHORS = document.querySelectorAll('a[href^="#"]');
 
-let enabled = true,
-  relativeTopList = {},
+let relativeTopList = {},
   heightHeader =
     +getComputedStyle(document.querySelector("header"))
       .height.match(/\-*\d*\.*\d*/g)
@@ -34,73 +33,24 @@ for (let anchor of ANCHORS) {
 
     anchor.addEventListener("click", function(event) {
       // event to navigation buttons
-   event.preventDefault(); // remove default event
-   if (!enabled) return;
+      event.preventDefault(); // remove default event
 
-   const blockID = anchor.getAttribute("href").substr(1); //id section
-   let relativelyTop = document
-       .getElementById(blockID)
-       .getBoundingClientRect().top,
-     step = 1,
-     scrollDown,
-     scrollUp;
-
-   enabled = false;
-
-   if (relativelyTop >= heightHeader) {
-     // DOWN
-     scrollDown = setTimeout(function iter() {
-       relativelyTop = document
-         .getElementById(blockID)
-         .getBoundingClientRect().top;
-
-       if (relativelyTop < 180) step = Math.sqrt(step);
-       else step += 1;
-
-       window.scrollBy(0, step);
-
-       if (relativelyTop >= heightHeader - 3) {
-         scrollDown = setTimeout(iter, 1);
-       }
-     }, 1);
-   } else {
-     //UP
-     scrollUp = setTimeout(function iter() {
-       relativelyTop = document
-         .getElementById(blockID)
-         .getBoundingClientRect().top;
-
-       if (relativelyTop > -50) step = Math.sqrt(step);
-       else step += 1;
-
-       window.scrollBy(0, -step);
-
-       if (relativelyTop < heightHeader - 3) {
-         scrollUp = setTimeout(iter, 1);
-       }
-     }, 1);
-   }
-
-   setTimeout(() => {
-     enabled = true;
-     clearInterval(scrollDown);
-     clearInterval(scrollUp);
-   }, 1000);
+      window.scrollTo(0, relativeTopList[blockId] - heightHeader);
     });
   }
 }
 
 document.addEventListener("scroll", () => {
   for (let anchor in relativeTopList)
-    if (window.scrollY > relativeTopList[anchor] - heightHeader)
+    if (window.scrollY > relativeTopList[anchor] - heightHeader - 5)
       addActive(NAVIGATION.querySelector('a[href^="#' + anchor + '"]'));
 });
 
 //--------------------------------------------------BURGER MENU---------------------------------
 
 const BURGER_MENU_BUTTON = document.querySelector("div.burger-menu"),
-  HEADER_NAVIGATION = document.querySelector("nav.header__navigation");
-
+  HEADER_NAVIGATION = document.querySelector("nav.header__navigation"),
+  NAVIGATION_BACKGROUND = document.querySelector("div.navigation__background");
 let status = false,
   resolution = true;
 
@@ -112,6 +62,7 @@ function show() {
 }
 
 function hide() {
+  NAVIGATION_BACKGROUND.classList.add("hide");
   HEADER_NAVIGATION.classList.add("burger-hide");
   HEADER_NAVIGATION.classList.remove("burger-left");
   status = false;
@@ -119,22 +70,27 @@ function hide() {
   HEADER_NAVIGATION.removeEventListener("animationend", hide);
 }
 
-function burgerMenu () {
+function burgerMenu() {
   if (resolution) {
     resolution = false;
     switch (status) {
       case false:
-        BURGER_MENU_BUTTON.classList.remove("rotation-left")
-        BURGER_MENU_BUTTON.classList.add("rotation-right")
+        NAVIGATION_BACKGROUND.classList.remove("hide");
+        BURGER_MENU_BUTTON.classList.remove("rotation-left");
+        BURGER_MENU_BUTTON.classList.add("rotation-right");
         HEADER_NAVIGATION.classList.remove("burger-hide");
         HEADER_NAVIGATION.classList.add("burger-right");
         HEADER_NAVIGATION.addEventListener("animationend", show);
+        NAVIGATION_BACKGROUND.addEventListener("click", burgerMenu);
+        NAVIGATION.addEventListener("click", burgerMenu);
         break;
       case true:
-        BURGER_MENU_BUTTON.classList.remove("rotation-right")
-        BURGER_MENU_BUTTON.classList.add("rotation-left")
+        BURGER_MENU_BUTTON.classList.remove("rotation-right");
+        BURGER_MENU_BUTTON.classList.add("rotation-left");
         HEADER_NAVIGATION.classList.remove("burger-right");
         HEADER_NAVIGATION.classList.add("burger-left");
+        NAVIGATION_BACKGROUND.removeEventListener("click", burgerMenu);
+        NAVIGATION.removeEventListener("click", burgerMenu);
         HEADER_NAVIGATION.addEventListener("animationend", hide);
         break;
     }
@@ -154,78 +110,60 @@ const IMAGES_SWITCHING = document.querySelector(
   PORTFOLIO_IMAGES = document.getElementById("presentation");
 
 let value = true;
+const defaultCollection = PORTFOLIO_IMAGES.querySelectorAll("li");
 
 for (let button of PORTFOLIO_BUTTONS) {
   button.addEventListener("click", event => {
     if (event.target.className == "images-switching_active") return;
     if (!value) return;
     value = false;
+
+    PORTFOLIO_IMAGES.innerHTML = "";
+
     IMAGES_SWITCHING.querySelectorAll("button").forEach(elem =>
       elem.classList.remove("images-switching_active")
     );
+
     PORTFOLIO_IMAGES.classList.add("switch");
+
     event.target.classList.add("images-switching_active");
+
     PORTFOLIO_IMAGES.addEventListener("animationend", () => {
       PORTFOLIO_IMAGES.classList.remove("switch");
       value = true;
     });
 
-    //---------------------Web Design-------------------------------------
+    //   //---------------------Web Design-------------------------------------
 
     if (event.target.innerHTML == "Web Design") {
-      for (let i = 0; i < PORTFOLIO_IMAGES.querySelectorAll("li").length; i++) {
-        PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-          "src",
-          "assets/Project_" + (i + 2) + ".png"
-        );
-        if (i == 11)
-          PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-            "src",
-            "assets/Project_" + 1 + ".png"
-          );
+      for (let i = 0; i < defaultCollection.length; i++) {
+        if (i >= 11) PORTFOLIO_IMAGES.append(defaultCollection[i % 11]);
+        else PORTFOLIO_IMAGES.append(defaultCollection[i + 1]);
       }
     }
-
-    //---------------------All-------------------------------------
+    //   //---------------------All-------------------------------------
 
     if (event.target.innerHTML == "All") {
-      for (let i = 0; i < PORTFOLIO_IMAGES.querySelectorAll("li").length; i++) {
-        PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-          "src",
-          "assets/Project_" + (i + 1) + ".png"
-        );
+      for (let i = 0; i < defaultCollection.length; i++) {
+        PORTFOLIO_IMAGES.append(defaultCollection[i]);
       }
     }
 
-    //---------------------Graphic Design-------------------------
+    //   //---------------------Graphic Design-------------------------
 
     if (event.target.innerHTML == "Graphic Design") {
-      for (let i = 0; i < PORTFOLIO_IMAGES.querySelectorAll("li").length; i++) {
-        PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-          "src",
-          "assets/Project_" + (i + 3) + ".png"
-        );
-        if (i >= 10)
-          PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-            "src",
-            "assets/Project_" + (i - 9) + ".png"
-          );
+      for (let i = 0; i < defaultCollection.length; i++) {
+        if (i >= 10) PORTFOLIO_IMAGES.append(defaultCollection[i % 10]);
+        else PORTFOLIO_IMAGES.append(defaultCollection[i + 2]);
       }
     }
 
-    //---------------------Artwork--------------------------------
+    //   //---------------------Artwork--------------------------------
 
     if (event.target.innerHTML == "Artwork") {
-      for (let i = 0; i < PORTFOLIO_IMAGES.querySelectorAll("li").length; i++) {
-        PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-          "src",
-          "assets/Project_" + (i + 4) + ".png"
-        );
-        if (i >= 9)
-          PORTFOLIO_IMAGES.children[i].children[0].setAttribute(
-            "src",
-            "assets/Project_" + (i - 8) + ".png"
-          );
+      for (let i = 0; i < defaultCollection.length; i++) {
+        if (i >= 9) PORTFOLIO_IMAGES.append(defaultCollection[i % 9]);
+        else PORTFOLIO_IMAGES.append(defaultCollection[i + 3]);
       }
     }
   });
