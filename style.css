@@ -360,7 +360,7 @@ div.our-services__content {
     "a a a a"
     "a a a a"
     "a a a a";
-  grid-gap: 17px 20px;
+  grid-gap: 20px 20px;
   padding: 0;
 }
 
@@ -1141,7 +1141,7 @@ li.presentation_active {
       "a a"
       "a a"
       "a a";
-    grid-gap: 4.9% 5.5%;
+    grid-gap: 5.9% 5.5%;
     margin-top: 0.7%;
     padding-left: 0;
   }
@@ -1184,7 +1184,7 @@ li.presentation_active {
       "a a a"
       "a a a";
     padding: 0;
-    grid-gap: 17px 20px;
+    grid-gap: 20px 20px;
   }
 
   .portfolio__content .content-description {
@@ -1307,6 +1307,7 @@ li.presentation_active {
   .header__logo {
     display: inline-block;
     top: 13px;
+    left: 10px;
     z-index: -1;
   }
 
@@ -1463,13 +1464,13 @@ li.presentation_active {
   /*-------------our services------------------*/
 
   div.our-services__content {
-    padding: 7% 7% 37.2% 8.3%;
+    padding: 7% 7% 39.2% 8.3%;
   }
 
   .our-services__list {
     grid-template-areas: "a";
-    grid-gap: 4.3% 5.5%;
-    margin-top: 7.1%;
+    grid-gap: 4.5% 5.5%;
+    margin-top: 8.5%;
     padding-left: 0;
   }
 
@@ -1487,7 +1488,7 @@ li.presentation_active {
   /*--------------------portfolio----------------------------*/
 
   .portfolio__content {
-    padding: 11% 8% 16.7% 8%;
+    padding: 11% 8% 6.7% 8%;
   }
 
   .portfolio {
@@ -1506,7 +1507,7 @@ li.presentation_active {
       "a a"
       "a a";
     padding: 0;
-    grid-gap: 2% 4.2%;
+    grid-gap: 14px 14px;
   }
 
   .portfolio__presentation img {
@@ -1571,7 +1572,7 @@ li.presentation_active {
   }
 
   .registration__contacts {
-    margin-top: 5.5%;
+    margin-top: 8.5%;
   }
 
   .registration__contacts-form {
